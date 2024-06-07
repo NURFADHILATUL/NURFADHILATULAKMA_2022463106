@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Gallery </title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="topnav">
+  <img src="icon/logoos.jpg" width="14%" height="10%" align="left"  hspace="left">
+  <a href="index.html"> Home </a><a name="TOP_PAGE">
+  <a href="about_me.html">About Me</a>
+  <a href="hobbies_interest.html">Hobbies</a>
+  <a href="family.html">Family</a>
+  <a href="education.html">Education</a>
+  <a href="gallery.html"> Gallery </a>
+  <a href="contact.html">Contact</a>
+
+</div>
+</header>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<center>
+<h1> ~WELCOME~ </h1>
+<p> THIS IS WHERE MY IMPORTANT MOMENTS BEGIN </p>
+</center>
+
+<center>
+<iframe width="900" height="500" src="https://www.youtube.com/embed/Rph9Ea_QQ-w?si=KZbgearIFn7FDniZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+
+<br><br>
+
+<h1> Moments </h1>
+<center>
+  <img src="image/muet1.jpg" width="20%" border="1">
+  <img src="image/raya.jpg" width="20%" border="1">
+  <img src="image/smile.jpg" width="20%" border="1">
+  <img src="image/amm.jpg" width="26%" border="1">
+  <img src="image/akma2.jpg" width="20%" border="1">
+  <img src="image/class_r.jpg" width="20%" border="1">
+  <img src="image/red.jpg" width="20%" border="1">
+ 
+  <img src="image/srn.jpg" width="20%" border="1">
+  <img src="image/k.jpg" width="20%" border="1">
+  <img src="image/aak.jpg" width="20%" border="1">
+  <img src="image/diri.jpg" width="20%" border="1">
+  <img src="image/diri2.jpg" width="20%" border="1">
+  <img src="image/school1.jpg" width="20%" border="1">
+  <img src="image/gmbr1.jpg" width="20%" border="1">
+  <img src="image/girls.jpg" width="20%" border="2">
+  <img src="image/ayah_ibu.jpg" width="14%" border="1">
+  <img src="image/ibu_ayah.jpg" width="16%" border="1">
+  <img src="image/cg_akma.jpg" width="18%" border="1">
+  <img src="image/hihi.jpg" width="20%" border="1">
+  <img src="image/maksu.jpg" width="20%" border="1">
+  <img src="image/mata.jpg" width="20%" border="1">
+  <img src="image/fami.jpg" width="20%" border="">
+</center>
+<br><br><br><br>
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 4</div>
+  <img src="image/china.jpg" style="width:100%">
+  <div class="text">COUNTRY I WANT TO VISIT</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 4</div>
+  <img src="image/eiffel-tower.jpg" style="width:100%">
+  <div class="text">PLACE I WANT TO VISIT</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 4</div>
+  <img src="image/switzerland.jpg" style="width:100%">
+  <div class="text">COUNTRY I WANT TO STAY 1</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 4</div>
+  <img src="image/melbourne-australia.jpg" style="width:100%">
+  <div class="text">COUNTRY I WANT TO STAY 2</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="image/sukan.jpg">
+      <img src="image/sukan.jpg" alt="friend" width="600" height="400">
+    </a>
+    <div class="desc">~SCHOOL SPORTS~</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="image/smile3.jpg">
+      <img src="image/smile3.jpg" alt="rommate" width="600" height="400">
+    </a>
+    <div class="desc">~MY ROOMMATE~</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="image/akma_f2.jpg">
+      <img src="image/akma_f2.jpg" alt="akma" width="600" height="400">
+    </a>
+    <div class="desc">GIRLS</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="image/red1.jpg">
+      <img src="image/red1.jpg" alt="classmate" width="600" height="400">
+    </a>
+    <div class="desc">FRIENDS</div>
+  </div>
+<div class="responsive">
+
+</div>
+</div>
+
+<div class="clearfix"></div>
+
+<div style="padding:6px;">
+ </div>
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+<center>
+<a href="#TOP_PAGE"> <img src="icon/top_button.jpg" width="3%" height="4%"> </a>
+<a href="#TOP_PAGE"></a>
+</center>
+
+<center>
+<footer>
+  <p>&copy; All Right Reserved</p>
+<a href="https://m.facebook.com/nurfadhilatul.akma?eav=AfZ39CMNyPMKtHWKJGkXvwlo3M_c5kjqnOxHUG2VJF_Hp_8NX59NKOFC26cCpIHlbDw&paipv=0/"><img src="icon/fb.jpg" width="3%" height="4%"></a>
+
+<a href="https://www.instagram.com/" target="_blank"><img src="icon/ig.jpg" width="3%" height="4%"></a>
+<a href="https://www.threads.net///" target="_blank"><img src="icon/threads.jpg" width="3%" height="1%"></a>
+
+<a href="https://www.tiktok.com/@fadhi_atul?lang=en" target="_blank"><img src="icon/tik.jpg" width="3%" height="4%"></a>
+
+<a href="https://www.youtube.com//" target="_blank"><img src="icon/u.jpg" width="3%" height="4%"></a>
+
+
+</footer>
+</center>
+
+
+</body>
+</html> 
